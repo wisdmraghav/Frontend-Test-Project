@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="demo_style.css">
+</head>
+<body>
+    <table>
+        <tr class="responsive">
+            <td>
+                <div class="inventory">
+
+                
+                    <div class="form">
+
+                        <h1 style="text-align: center;padding-top: 15px; padding-bottom: 10px;">Add Item To Inventory</h1>
+                        <form autocomplete="off" onsubmit="onFormSubmit()">
+                            <div>
+                                <label for="productCode">Product Code</label>
+                                <input type="text" name="productCode" id="productCode"  required placeholder="Enter Product Code as P101">
+                            </div>
+                            <div>
+                                <label for="product">Product Name</label>
+                                <input type="text" name="product" id="product"  required placeholder="Enter Product Name as M13,M52">
+                            </div>
+                            <div>
+                                <label for="qty">Qty</label><br>
+                                <input type="number" name="qty" id="qty" min="1"  required placeholder="Enter Quantity that you have in store">
+                            </div>
+                            <div>
+                                <label for="perPrice">Price</label><br>
+                                <input type="number" name="perPrice" id="perPrice" min="1"  required placeholder="Add Price For Per Product eg.150">
+                            </div>
+
+                            <div class="form_action--button">
+                                <input type="submit" value="Submit">
+                                <input type="reset" value="Reset">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="list_store">
+
+                        
+
+                        <td>
+                            <h1 style="text-align: center;padding-top: 15px; padding-bottom: 10px;">Your Inventory</h1>
+                            <!-- <table class="list" id="storeList">
+                                <thead class="thead">
+                                    <tr>
+                                        <th>Product Code</th>
+                                        <th>Product Name</th>
+                                        <th>Qty</th>
+                                        <th>Price</th>
+                                    </tr>
+
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table> -->
+
+
+                            <!-- <table class="customers" id="storeList">
+                                <tr>
+                                    <th>Product Code</th>
+                                    <th>Product Name</th>
+                                    <th>Qty</th>
+                                    <th>Price</th>
+                                    <th>Action</th>
+                                </tr>
+
+                                <tbody>
+
+                                </tbody>
+                               
+                              
+                              
+                            </table> -->
+                            <div class="outer-wrapper">
+                                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." id="filter" style="margin-left: 15px;">
+                                <div class="table-wrapper">
+                                    <table class="customers" id="storeList">
+                                        <thead>
+                                            <tr>
+                                                <th onclick="sortTable_pc(0)">Product Code</th>
+                                                <th onclick="sortTable_pc(1)">Product Name</th>
+                                                <th onclick="sortTable_pc(2)">Qty</th>
+                                                <th onclick="sortTable_pc(3)">Price</th>
+                                                <th>Action</th>
+                                            </tr>
+                        
+                                        </thead>
+                                        <tbody>
+                        
+                        
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+
+                            <!-- <div class="retailer">
+                                <h1 style="text-align: center;">Retailer List</h1>
+                                <table  id="retailer-list">
+                                    <tr>
+        
+                                        <th>Product Name</th>
+        
+                                    </tr>
+        
+                                    <tbody>
+                                        
+        
+        
+                                    </tbody>
+                                   
+                                  
+                                  
+                                </table>
+                            </div> -->
+                            <h1 style="text-align: center; padding-top: 15px; padding-bottom: 10px;">Retailer List</h1>
+                            <div class="outer-wrapper">
+                                <input type="text" id="Sec_filter" onkeyup="myFunc()" placeholder="Search for names.." id="filter-two" style="margin-left: 15px;">
+                                <div class="table-wrapper retailer">
+                                    <table class="customers" id="retailer-list">
+                                        <thead>
+                                            <tr>
+                                                
+                                                <th onclick="sortTable(0)">Product Name</th>
+                                                <th onclick="sortTable(1)">Quantity</th>
+                                                <th>Action</th>
+                                            </tr>
+                        
+                                        </thead>
+                                        <tbody>
+                        
+                        
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </td>
+                    </div>
+                </div>
+
+
+            </td>
+        </tr>
+    </table>
+    <script type="text/javascript" src="./script.js"></script>
+</body>
+</html>
