@@ -125,7 +125,7 @@ function updateSell(b,c) {
             // var concern=prompt(c-x+ " Quantity Remain Add It To Buying From Reatiler List,Please Reply With 1");
             // alert(c-x+ " Quantity Remain Added To Buying From Reatiler List");
             while(!quant_retail){
-              var quant_retail=prompt(c-x+ " Quantity Remain Add How Many To Buy More From Reatiler List");
+              var quant_retail=prompt(c-x+ " Quantity Remain, How Many To Buy More From Reatiler List");
             };
             
             // if (concern==1 && !(retail_product.includes(b.cells[1].innerHTML))){
@@ -156,48 +156,55 @@ function updateSell(b,c) {
                 
                 
             // }
-            if (!(retail_product.includes(b.cells[1].innerHTML))){
+            if(quant_retail>0){
 
             
-                
-                // Get the table element in which you want to add row
-                let table = document.getElementById("retailer-list");
-                console.log("inside if condition");
-                console.log(b.cells[1].innerHTML);
-                console.log(table);
-            
-                // Create a row using the inserRow() method and
-                // specify the index where you want to add the row
-                let row = table.insertRow(-1); // We are adding at the end
-            
-                // Create table cells
-                let c1 = row.insertCell(0);
-                let c2= row.insertCell(1);
-                let c3=row.insertCell(2);
-                
-                
-            
-                // Add data to c1 and c2
-                c1.innerText =b.cells[1].innerHTML;
+              if (!(retail_product.includes(b.cells[1].innerHTML))){
 
-                if (quant_retail==null){
-                  c2.innerHTML=5;
-                }
-                else{
+              
+                  
+                  // Get the table element in which you want to add row
+                  let table = document.getElementById("retailer-list");
+                  console.log("inside if condition");
+                  console.log(b.cells[1].innerHTML);
+                  console.log(table);
+              
+                  // Create a row using the inserRow() method and
+                  // specify the index where you want to add the row
+                  let row = table.insertRow(-1); // We are adding at the end
+              
+                  // Create table cells
+                  let c1 = row.insertCell(0);
+                  let c2= row.insertCell(1);
+                  let c3=row.insertCell(2);
+                  
+                  
+              
+                  // Add data to c1 and c2
+                  c1.innerText =b.cells[1].innerHTML;
                   c2.innerHTML=quant_retail;
-                }
-                
-                c3.innerHTML=`<button onClick="on_Retail_del(this)">Delete</button>`;
-                retail_product.push(b.cells[1].innerHTML);
-                console.log(retail_product);
-                
-                
+                  // if (quant_retail==0){
+                  //   c2.innerHTML=5;
+                  // }
+                  // else{
+                  //   c2.innerHTML=quant_retail;
+                  // }
+                  
+                  c3.innerHTML=`<button onClick="on_Retail_del(this)">Delete</button>`;
+                  retail_product.push(b.cells[1].innerHTML);
+                  console.log(retail_product);
+                  
+                  
+              }
+            }
+            else{
+              alert("Quantity can not be zero or negative.")
             }
         }
     }
 }
     else{
-        alert("Quantity Can Not Be Negative")
+        alert("Quantity can not be zero or negative.")
     }
     
 }
